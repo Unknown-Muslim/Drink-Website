@@ -1,5 +1,6 @@
+/// <reference types="react" />
 "use client";
-import { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ScrollDownButtonProps } from "../types";
 
 export default function ScrollDownButton({
