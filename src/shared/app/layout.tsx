@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { Inconsolata } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-
-const inconsolata = Inconsolata({
-  variable: "--font-inconsolata",
-  subsets: ["latin"],
-});
 
 const thunder = localFont({
   src: [
@@ -44,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="w-screen overflow-hidden">
       <body
-        className={`${inconsolata.variable} ${thunder.variable} antialiased w-screen overflow-hidden `}
+        className={`${thunder.variable} antialiased w-screen overflow-hidden`}
       >
         {children}
       </body>

@@ -7,7 +7,6 @@ export default function ScrollDownButton({
   secondLine,
   size = 100,
   textColor = "white",
-  themeColor = "#00ff41",
   isMobile,
 }: ScrollDownButtonProps) {
   const [showMenu, setShowMenu] = useState(false);
@@ -26,7 +25,6 @@ export default function ScrollDownButton({
         setShowMenu(false);
       }
     }
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -46,7 +44,7 @@ export default function ScrollDownButton({
       ref={buttonRef}
     >
       <button
-        className="rounded-full border-1 border-white/50 flex flex-col items-center justify-center transition-all duration-300 bg-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.25)]"
+        className="rounded-full border border-white/50 flex flex-col items-center justify-center transition-all duration-300 bg-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.25)]"
         style={{
           width: `${mobileSize}px`,
           height: `${mobileSize}px`,
@@ -60,7 +58,7 @@ export default function ScrollDownButton({
 
       {showMenu && (
         <div
-          className="absolute bottom-full mb-4 right-0 backdrop-blur-md rounded-2xl shadow-lg overflow-hidden transform origin-bottom-right transition-all"
+          className="absolute bottom-full mb-4 right-0 backdrop-blur-md rounded-2xl shadow-lg overflow-hidden"
           style={{
             animation: "scaleIn 0.2s ease-out forwards",
             zIndex: 600,
