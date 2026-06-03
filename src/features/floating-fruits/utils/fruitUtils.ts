@@ -2,10 +2,10 @@ import { FruitConfig } from '../types';
 
 // Map juice types to fruit images
 export const fruitTypeMap: Record<string, string> = {
-    "Lemon Ginger": 'lemon.png',
-    "Blueberry Açai": 'blueberry.png',
-    "Mango Burst": 'mango.png',
-    "Raspberry Rosé": 'raspberry.png',
+    "Original Strike": 'lemon.png',
+    "Ultra Void": 'blueberry.png',
+    "Toxic Surge": 'mango.png',
+    "Red Storm": 'raspberry.png',
     // Default to lemon for any unknown type
     default: 'lemon.png'
 };

@@ -31,9 +31,9 @@ const thunder = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Juicy - Premium Juice Selection",
+  title: "Monster × Red Bull — COLLISION",
   description:
-    "Discover a world of vibrant flavors with our premium juice selection",
+    "Two legends. One unstoppable force. Monster × Red Bull Collab — a concept.",
 };
 
 export default function RootLayout({

@@ -32,9 +32,9 @@ const WaterWave = dynamic(() => import("react-water-wave"), {
 });
 
 export default function Home() {
-  // Default to Lemon Ginger
-  const [theme, setTheme] = useState(canThemeMap["Lemon Ginger"]);
-  const [productTitle, setProductTitle] = useState("Lemon Ginger");
+  // Default to Original Strike
+  const [theme, setTheme] = useState(canThemeMap["Original Strike"]);
+  const [productTitle, setProductTitle] = useState("Original Strike");
   const [, setProductDesc] = useState(pageContent.product.description);
   const isMobile = useMobile();
 
@@ -112,7 +112,7 @@ export default function Home() {
               {/* ProductLogo always fixed as "JUICY" and always white */}
               <ProductLogo
                 isMobile={isMobile}
-                text="JUICY"
+                text="MONSTER × RED BULL"
                 color="white"
                 className="theme-text "
               />
@@ -156,6 +156,13 @@ export default function Home() {
           </div>
         )}
       </WaterWave>
+      {/* Concept disclaimer */}
+      <div
+        className="fixed bottom-2 left-1/2 -translate-x-1/2 z-[200] text-center pointer-events-none"
+        style={{ color: 'rgba(255,255,255,0.35)', fontSize: '11px', letterSpacing: '0.15em' }}
+      >
+        ⚡ THIS IS A CONCEPT — NOT AN OFFICIAL PRODUCT ⚡
+      </div>
     </div>
   );
 }

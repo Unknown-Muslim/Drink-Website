@@ -24,18 +24,18 @@ export interface PageContent {
 
 export const pageContent: PageContent = {
     nav: {
-        logo: "Juicy",
+        logo: "MxRB",
         items: [
-            { label: "Flavour" },
+            { label: "Flavours" },
             { label: "Drinks" },
-            { label: "Fruit" },
+            { label: "Energy" },
             { label: "About" },
             { label: "Contact" },
         ],
         cartCount: 2,
     },
     logo: {
-        text: "JUICY",
+        text: "MONSTER × RED BULL",
     },
     sizes: [
         { size: "355", unit: "ML", selected: true },
@@ -43,10 +43,10 @@ export const pageContent: PageContent = {
         { size: "125", unit: "ML" },
     ],
     product: {
-        title: "Cheeky lime",
+        title: "Collision",
         description:
-            "Discover a world of vibrant flavors with our premium juice selection. At Fresh & Juicy, we believe in the power of nature's finest ingredients to bring you",
-        buttonText: "See More",
+            "Two legends. One unstoppable force. Monster × Red Bull Collab fuses raw energy with precision-crafted power — unleash the collision.",
+        buttonText: "Explore",
     },
     scroll: {
         firstLine: "Get",

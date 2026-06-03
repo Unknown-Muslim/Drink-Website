@@ -1,34 +1,33 @@
 import { JuiceCan, PositionConfig } from "../types";
 
-// Juice can data with 3D model paths
+// Energy drink can data with 3D model paths
 export const juiceCans: JuiceCan[] = [
     {
-        name: "Lemon Ginger",
-        color: "#82AF38", // Green
+        name: "Original Strike",
+        color: "#00ff41",
         model: "/assets/3d/can/lemon.glb",
-        position: "top", // 12 o'clock
+        position: "top",
     },
     {
-        name: "Blueberry Açai",
-        color: "#6A5ACD", // Purple
-        model: "/assets/3d/can/blueberry.glb",
-        position: "right", // 3 o'clock
-    },
-    {
-        name: "Mango Burst",
-        color: "#FFA500", // Orange
-        model: "/assets/3d/can/mango.glb",
-        position: "bottom", // 6 o'clock
-    },
-    {
-        name: "Raspberry Rosé",
-        color: "#FF6B81", // Pink
+        name: "Red Storm",
+        color: "#ff1a1a",
         model: "/assets/3d/can/raspberry.glb",
-        position: "left", // 9 o'clock
+        position: "right",
+    },
+    {
+        name: "Ultra Void",
+        color: "#6600ff",
+        model: "/assets/3d/can/blueberry.glb",
+        position: "bottom",
+    },
+    {
+        name: "Toxic Surge",
+        color: "#ccff00",
+        model: "/assets/3d/can/mango.glb",
+        position: "left",
     },
 ];
 
-// Position configurations
 export const positionConfigs: PositionConfig[] = [
     {
         className: "absolute top-0 left-1/2 -translate-x-1/2",

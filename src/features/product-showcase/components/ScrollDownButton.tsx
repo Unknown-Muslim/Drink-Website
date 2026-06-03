@@ -1,7 +1,5 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import { FaLinkedin } from "react-icons/fa6";
-import { HiShoppingCart } from "react-icons/hi";
 import { ScrollDownButtonProps } from "../types";
 
 export default function ScrollDownButton({
@@ -9,7 +7,7 @@ export default function ScrollDownButton({
   secondLine,
   size = 100,
   textColor = "white",
-  themeColor = "#82AF38",
+  themeColor = "#00ff41",
   isMobile,
 }: ScrollDownButtonProps) {
   const [showMenu, setShowMenu] = useState(false);
@@ -35,20 +33,6 @@ export default function ScrollDownButton({
     };
   }, []);
 
-  const socialLinks = [
-    {
-      name: "Aniq UI Templates",
-      icon: <HiShoppingCart size={isMobile ? 20 : 24} />,
-      url: "https://www.aniq-ui.com/en/templates",
-    },
-
-    {
-      name: "LinkedIn",
-      icon: <FaLinkedin size={isMobile ? 20 : 24} />,
-      url: "https://www.linkedin.com/in/mohamed-djoudir",
-    },
-  ];
-
   const mobileSize = isMobile ? 60 : size;
   const mobileFontSize = isMobile ? "text-xs" : "";
 
@@ -62,23 +46,13 @@ export default function ScrollDownButton({
       ref={buttonRef}
     >
       <button
-        className="rounded-full border-1 border-white/50 flex flex-col items-center justify-center transition-all duration-300 bg-[rgba(255,255,255,0.2)] hover:bg-[rgba(255,255,255,0.4)]"
+        className="rounded-full border-1 border-white/50 flex flex-col items-center justify-center transition-all duration-300 bg-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.25)]"
         style={{
           width: `${mobileSize}px`,
           height: `${mobileSize}px`,
           color: textColor,
         }}
         onClick={handleClick}
-        onMouseOver={(e) => {
-          if (!showMenu) {
-            e.currentTarget.style.opacity = "0.8";
-          }
-        }}
-        onMouseOut={(e) => {
-          if (!showMenu) {
-            e.currentTarget.style.opacity = "1";
-          }
-        }}
       >
         <span className={`text-shadow-xs ${mobileFontSize}`}>{firstLine}</span>
         <span className={`text-shadow-xs ${mobileFontSize}`}>{secondLine}</span>
@@ -86,49 +60,30 @@ export default function ScrollDownButton({
 
       {showMenu && (
         <div
-          className="absolute bottom-full mb-4 right-0 bg-white bg-opacity-95 backdrop-blur-md rounded-2xl shadow-lg overflow-hidden transform origin-bottom-right transition-all"
+          className="absolute bottom-full mb-4 right-0 backdrop-blur-md rounded-2xl shadow-lg overflow-hidden transform origin-bottom-right transition-all"
           style={{
             animation: "scaleIn 0.2s ease-out forwards",
             zIndex: 600,
-            width: "auto",
+            background: "rgba(0,0,0,0.85)",
+            border: "1px solid rgba(0,255,65,0.3)",
+            minWidth: "220px",
           }}
         >
-          <div className="p-3">
+          <div className="p-4">
             <h3
-              className={`font-semibold mb-2 text-center ${
-                isMobile ? "text-sm" : ""
+              className={`font-semibold mb-1 text-center ${
+                isMobile ? "text-sm" : "text-base"
               }`}
-              style={{ color: themeColor }}
+              style={{ color: "#00ff41" }}
             >
-              Contact me
+              Contact
             </h3>
-
-            <div className="flex gap-2">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${
-                    isMobile ? "w-10 h-10" : "w-12 h-12"
-                  } flex items-center justify-center rounded-full transition-opacity duration-300`}
-                  style={{
-                    backgroundColor: themeColor,
-                    color: "white",
-                  }}
-                  title={link.name}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.opacity = "0.8";
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.opacity = "1";
-                  }}
-                >
-                  {link.icon}
-                </a>
-              ))}
-            </div>
+            <p
+              className="text-center text-sm"
+              style={{ color: "rgba(255,255,255,0.6)" }}
+            >
+              Contact details coming soon.
+            </p>
           </div>
         </div>
       )}
