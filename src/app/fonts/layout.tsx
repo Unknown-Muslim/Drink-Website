@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
 
 const thunder = localFont({
   src: [
-    { path: "./fonts/Thunder-BlackLC.woff2", weight: "400", style: "normal" },
-    { path: "./fonts/Thunder-BlackLC.woff",  weight: "400", style: "normal" },
-    { path: "./fonts/Thunder-BlackLC.ttf",   weight: "400", style: "normal" },
+    { path: "./Thunder-BlackLC.woff2", weight: "400", style: "normal" },
+    { path: "./Thunder-BlackLC.woff",  weight: "400", style: "normal" },
+    { path: "./Thunder-BlackLC.ttf",   weight: "400", style: "normal" },
   ],
   variable: "--font-thunder",
   display: "swap",

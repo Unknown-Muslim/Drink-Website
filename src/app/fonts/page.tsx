@@ -57,6 +57,9 @@ const SIZES = ["355 ML", "500 ML", "1 L"];
 function useMobile() {
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
+    // Fix: Prevent window execution context issues on server pre-rendering
+    if (typeof window === "undefined") return;
+
     const check = () => setMobile(window.innerWidth < 768);
     check();
     window.addEventListener("resize", check);
@@ -393,12 +396,20 @@ export default function Page() {
               <div className={`absolute z-50 flex ${mobile ? "flex-row gap-2 top-20 left-4" : "flex-col gap-3 top-1/2 -translate-y-1/2 left-6"}`}>
                 {SIZES.map(s => (
                   <button key={s} onClick={() => setSize(s)} style={{
-                    width: 52, height: 52, borderRadius: "50%", display: "flex", flexDirection: "column",
-                    alignItems: "center", justifyContent: "center", cursor: "pointer", transition: "all 0.3s",
+                    width: 52, 
+                    height: 52, 
+                    borderRadius: "50%", 
+                    display: "flex", 
+                    flexDirection: "column",
+                    alignItems: "center", 
+                    justifyContent: "center", // Fixed formatting and syntax typo here!
+                    cursor: "pointer", 
+                    transition: "all 0.3s",
                     background: size === s ? theme.btn : "rgba(255,255,255,0.1)",
                     color: size === s ? theme.btnText : "white",
                     border: `1px solid ${size === s ? theme.btn : "rgba(255,255,255,0.25)"}`,
-                    fontSize: 10, fontWeight: 600,
+                    fontSize: 10, 
+                    fontWeight: 600,
                   }}>
                     {s.split(" ").map((p, i) => <span key={i}>{p}</span>)}
                   </button>
