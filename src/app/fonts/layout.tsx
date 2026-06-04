@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className="w-screen overflow-hidden">
-      <body className={`${thunder.variable} antialiased w-screen overflow-hidden`}>
+    <html lang="en" className="overflow-hidden">
+      <body className={`${thunder.variable} overflow-hidden w-screen`}>
         {children}
       </body>
     </html>
