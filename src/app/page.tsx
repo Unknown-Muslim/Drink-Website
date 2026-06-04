@@ -57,9 +57,6 @@ const SIZES = ["355 ML", "500 ML", "1 L"];
 function useMobile() {
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
-    // Fix: Prevent window execution context issues on server pre-rendering
-    if (typeof window === "undefined") return;
-
     const check = () => setMobile(window.innerWidth < 768);
     check();
     window.addEventListener("resize", check);
@@ -217,7 +214,7 @@ function NavBar({ theme }: { theme: typeof THEMES[Flavor] }) {
   return (
     <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1440px] z-[100] flex items-center justify-between px-8 py-3"
       style={{ backdropFilter: "blur(8px)", borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
-      <span className="text-white text-2xl uppercase font-bold tracking-widest" style={{ fontFamily: "var(--font-thunder)" }}>MxRB</span>
+      <span className="text-white text-2xl uppercase font-bold tracking-widest" style={{ fontFamily: "Bebas Neue, sans-serif" }}>MxRB</span>
 
       {!mobile && (
         <nav className="flex gap-8">
@@ -378,7 +375,7 @@ export default function Page() {
               {/* Big background brand text */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ zIndex: -1 }}>
                 <h1 style={{
-                  fontFamily: "var(--font-thunder), sans-serif",
+                  fontFamily: "Bebas Neue, sans-serif",
                   fontSize: mobile ? "min(9vw, 3.5rem)" : "min(8vw, 10rem)",
                   fontWeight: 500, color: "white", letterSpacing: "0.04em",
                   textTransform: "uppercase", whiteSpace: mobile ? "normal" : "nowrap", textAlign: "center",
@@ -396,20 +393,12 @@ export default function Page() {
               <div className={`absolute z-50 flex ${mobile ? "flex-row gap-2 top-20 left-4" : "flex-col gap-3 top-1/2 -translate-y-1/2 left-6"}`}>
                 {SIZES.map(s => (
                   <button key={s} onClick={() => setSize(s)} style={{
-                    width: 52, 
-                    height: 52, 
-                    borderRadius: "50%", 
-                    display: "flex", 
-                    flexDirection: "column",
-                    alignItems: "center", 
-                    justifyContent: "center", // Fixed formatting and syntax typo here!
-                    cursor: "pointer", 
-                    transition: "all 0.3s",
+                    width: 52, height: 52, borderRadius: "50%", display: "flex", flexDirection: "column",
+                    alignItems: "center", justifyContent: "center", cursor: "pointer", transition: "all 0.3s",
                     background: size === s ? theme.btn : "rgba(255,255,255,0.1)",
                     color: size === s ? theme.btnText : "white",
                     border: `1px solid ${size === s ? theme.btn : "rgba(255,255,255,0.25)"}`,
-                    fontSize: 10, 
-                    fontWeight: 600,
+                    fontSize: 10, fontWeight: 600,
                   }}>
                     {s.split(" ").map((p, i) => <span key={i}>{p}</span>)}
                   </button>
@@ -418,7 +407,7 @@ export default function Page() {
 
               {/* Product info */}
               <div className="absolute z-50" style={{ bottom: mobile ? 56 : 32, left: mobile ? 16 : 80, right: mobile ? 16 : "auto", maxWidth: mobile ? "auto" : 500 }}>
-                <h2 style={{ fontFamily: "var(--font-thunder), sans-serif", fontSize: mobile ? "2.2rem" : "3.5rem", fontWeight: 500, color: "white", marginBottom: 8, textShadow: "0 2px 12px rgba(0,0,0,0.6)" }}>
+                <h2 style={{ fontFamily: "Bebas Neue, sans-serif", fontSize: mobile ? "2.2rem" : "3.5rem", fontWeight: 500, color: "white", marginBottom: 8, textShadow: "0 2px 12px rgba(0,0,0,0.6)" }}>
                   {flavor}
                 </h2>
                 <p style={{ color: "rgba(255,255,255,0.75)", fontSize: mobile ? 14 : 16, lineHeight: 1.6, textShadow: "0 1px 6px rgba(0,0,0,0.5)", marginBottom: 16 }}>
