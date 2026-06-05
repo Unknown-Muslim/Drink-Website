@@ -4,7 +4,7 @@ import { JuicyLogoProps } from "../types";
 export default function ProductLogo({
   text,
   color = "white",
-  fontSize = "clamp(10rem,10rem + 15vw,29rem)",
+  fontSize = "clamp(6rem, 8rem + 10vw, 18rem)",
   fontFamily = "var(--font-thunder), sans-serif",
   className = "",
   isMobile = false,
@@ -17,7 +17,7 @@ export default function ProductLogo({
           fontFamily,
           color,
           fontWeight: 500,
-          fontSize: isMobile ? "clamp(5rem,9rem + 15vw,10rem)" : fontSize,
+          fontSize: isMobile ? "clamp(4rem, 6rem + 8vw, 8rem)" : fontSize,
           letterSpacing: "0.01em",
           textTransform: "uppercase",
           display: "inline-block",

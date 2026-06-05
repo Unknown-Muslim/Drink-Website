@@ -2,54 +2,35 @@ import { NavItem } from "@/features/navigation";
 import { SizeOption } from "@/features/product-showcase";
 
 export interface PageContent {
-    nav: {
-        logo: string;
-        items: NavItem[];
-        cartCount: number;
-    };
-    logo: {
-        text: string;
-    };
-    sizes: SizeOption[];
-    product: {
-        title: string;
-        description: string;
-        buttonText: string;
-    };
-    scroll: {
-        firstLine: string;
-        secondLine: string;
-    };
+  nav: { logo: string; items: NavItem[]; cartCount: number; };
+  logo: { text: string; };
+  sizes: SizeOption[];
+  product: { title: string; description: string; buttonText: string; };
+  scroll: { firstLine: string; secondLine: string; };
 }
 
 export const pageContent: PageContent = {
-    nav: {
-        logo: "Juicy",
-        items: [
-            { label: "Flavour" },
-            { label: "Drinks" },
-            { label: "Fruit" },
-            { label: "About" },
-            { label: "Contact" },
-        ],
-        cartCount: 2,
-    },
-    logo: {
-        text: "JUICY",
-    },
-    sizes: [
-        { size: "355", unit: "ML", selected: true },
-        { size: "100", unit: "ML" },
-        { size: "125", unit: "ML" },
+  nav: {
+    logo: "MxRB",
+    items: [
+      { label: "Flavours" },
+      { label: "Drinks"   },
+      { label: "Energy"   },
+      { label: "About"    },
+      { label: "Contact"  },
     ],
-    product: {
-        title: "Cheeky lime",
-        description:
-            "Discover a world of vibrant flavors with our premium juice selection. At Fresh & Juicy, we believe in the power of nature's finest ingredients to bring you",
-        buttonText: "See More",
-    },
-    scroll: {
-        firstLine: "Get",
-        secondLine: "This",
-    },
+    cartCount: 2,
+  },
+  logo: { text: "MONSTER × RED BULL" },
+  sizes: [
+    { size: "355", unit: "ML", selected: true },
+    { size: "500", unit: "ML" },
+    { size: "1",   unit: "L"  },
+  ],
+  product: {
+    title: "Original Strike",
+    description: "The classic collision. Monster's raw power meets Red Bull's precision in a neon-green surge.",
+    buttonText: "Explore",
+  },
+  scroll: { firstLine: "Get", secondLine: "This" },
 };

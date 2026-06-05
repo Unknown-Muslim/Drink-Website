@@ -9,7 +9,7 @@ export default function ScrollDownButton({
   secondLine,
   size = 100,
   textColor = "white",
-  themeColor = "#82AF38",
+  themeColor = "#00ff41",
   isMobile,
 }: ScrollDownButtonProps) {
   const [showMenu, setShowMenu] = useState(false);
@@ -86,24 +86,25 @@ export default function ScrollDownButton({
 
       {showMenu && (
         <div
-          className="absolute bottom-full mb-4 right-0 bg-white bg-opacity-95 backdrop-blur-md rounded-2xl shadow-lg overflow-hidden transform origin-bottom-right transition-all"
+          className="absolute bottom-full mb-4 right-0 bg-black/90 backdrop-blur-md rounded-2xl shadow-lg overflow-hidden transform origin-bottom-right transition-all"
           style={{
             animation: "scaleIn 0.2s ease-out forwards",
             zIndex: 600,
-            width: "auto",
+            minWidth: "200px",
+            border: `1px solid ${themeColor}33`,
           }}
         >
-          <div className="p-3">
+          <div className="p-4 text-center">
             <h3
-              className={`font-semibold mb-2 text-center ${
-                isMobile ? "text-sm" : ""
+              className={`font-semibold mb-2 ${
+                isMobile ? "text-sm" : "text-base"
               }`}
               style={{ color: themeColor }}
             >
-              Contact me
+              Contact
             </h3>
 
-            <div className="flex gap-2">
+            <div className="flex gap-2 justify-center">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
@@ -115,7 +116,7 @@ export default function ScrollDownButton({
                   } flex items-center justify-center rounded-full transition-opacity duration-300`}
                   style={{
                     backgroundColor: themeColor,
-                    color: "white",
+                    color: themeColor === "#ccff00" || themeColor === "#00ff41" ? "#0a1a0a" : "white",
                   }}
                   title={link.name}
                   onMouseOver={(e) => {

@@ -4,14 +4,14 @@ import { CartItem } from '../types';
 export const sampleCartItems: CartItem[] = [
     {
         id: 1,
-        name: "Lemon Ginger Soda",
+        name: "Original Strike",
         price: 4.99,
         quantity: 1,
         image: "/assets/images/can/lemon.webp",
     },
     {
         id: 2,
-        name: "Blueberry Açai Soda",
+        name: "Ultra Void",
         price: 5.49,
         quantity: 1,
         image: "/assets/images/can/blueberry.webp",

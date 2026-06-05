@@ -1,99 +1,89 @@
-// Theme configuration for different juice flavors
-export type JuiceName = "Lemon Ginger" | "Blueberry Açai" | "Mango Burst" | "Raspberry Rosé";
+export type JuiceName = "Original Strike" | "Red Storm" | "Ultra Void" | "Toxic Surge";
 
 export interface ThemeConfig {
-    mainBgColor: string;
-    blurColor: string;
-    textColor: string;
-    accentColor: string;
-    buttonBgColor: string;
-    buttonTextColor: string;
+  mainBgColor: string;
+  blurColor: string;
+  textColor: string;
+  accentColor: string;
+  buttonBgColor: string;
+  buttonTextColor: string;
 }
 
 export interface JuiceInfo {
-    title: string;
-    description: string;
+  title: string;
+  description: string;
 }
 
-// Can color and text color map
 export const canThemeMap: Record<JuiceName, ThemeConfig> = {
-    "Lemon Ginger": {
-        mainBgColor: "#82AF38",
-        blurColor: "#E5F985",
-        textColor: "white",
-        accentColor: "rgba(255, 255, 255, 0.9)",
-        buttonBgColor: "white",
-        buttonTextColor: "#82AF38",
-    },
-    "Blueberry Açai": {
-        mainBgColor: "#385dd2",
-        blurColor: "#B6B6F9",
-        textColor: "white",
-        accentColor: "rgba(255, 255, 255, 0.9)",
-        buttonBgColor: "white",
-        buttonTextColor: "#385dd2",
-    },
-    "Mango Burst": {
-        mainBgColor: "#FFA500",
-        blurColor: "#FFF3B6",
-        textColor: "#222",
-        accentColor: "rgba(0,0,0,0.7)",
-        buttonBgColor: "white",
-        buttonTextColor: "#FFA500",
-    },
-    "Raspberry Rosé": {
-        mainBgColor: "#FF6B81",
-        blurColor: "#FFD6DE",
-        textColor: "white",
-        accentColor: "rgba(255,255,255,0.9)",
-        buttonBgColor: "white",
-        buttonTextColor: "#FF6B81",
-    },
+  "Original Strike": {
+    mainBgColor: "#0a1a0a",
+    blurColor: "#00ff41",
+    textColor: "white",
+    accentColor: "rgba(0,255,65,0.9)",
+    buttonBgColor: "#00ff41",
+    buttonTextColor: "#0a1a0a",
+  },
+  "Red Storm": {
+    mainBgColor: "#1a0505",
+    blurColor: "#ff2020",
+    textColor: "white",
+    accentColor: "rgba(255,32,32,0.9)",
+    buttonBgColor: "#ff2020",
+    buttonTextColor: "#ffffff",
+  },
+  "Ultra Void": {
+    mainBgColor: "#05050f",
+    blurColor: "#6600ff",
+    textColor: "white",
+    accentColor: "rgba(102,0,255,0.9)",
+    buttonBgColor: "#6600ff",
+    buttonTextColor: "#ffffff",
+  },
+  "Toxic Surge": {
+    mainBgColor: "#0f1a00",
+    blurColor: "#ccff00",
+    textColor: "white",
+    accentColor: "rgba(204,255,0,0.9)",
+    buttonBgColor: "#ccff00",
+    buttonTextColor: "#0f1a00",
+  },
 };
 
-// Juice product data with unique descriptions for each flavor
 export const juiceData: Record<JuiceName, JuiceInfo> = {
-    "Lemon Ginger": {
-        title: "Lemon Ginger",
-        description:
-            "A zesty and refreshing blend with a spicy kick. Our Lemon Ginger juice combines the citrusy brightness of fresh lemons with the warming properties of ginger.",
-    },
-    "Blueberry Açai": {
-        title: "Blueberry Açai",
-        description:
-            "A nutrient-packed superfood blend. Our Blueberry Açai juice brings together antioxidant-rich berries with the exotic taste of açai for a delicious health boost.",
-    },
-    "Mango Burst": {
-        title: "Mango Burst",
-        description:
-            "A tropical explosion of sweetness. Our Mango Burst juice captures the sun-ripened goodness of premium mangoes for a taste of paradise in every sip.",
-    },
-    "Raspberry Rosé": {
-        title: "Raspberry Rosé",
-        description:
-            "An elegant and sophisticated blend. Our Raspberry Rosé juice combines the delicate sweetness of raspberries with subtle floral notes for a refined exp.",
-    },
+  "Original Strike": {
+    title: "Original Strike",
+    description: "The classic collision. Monster's raw power meets Red Bull's precision in a neon-green surge that hits harder than anything you've felt before.",
+  },
+  "Red Storm": {
+    title: "Red Storm",
+    description: "Crimson chaos unleashed. A scorching fusion of Monster heat and Red Bull intensity — this one doesn't slow down. Ever.",
+  },
+  "Ultra Void": {
+    title: "Ultra Void",
+    description: "Enter the darkness. Ultra Void blends deep space cold with electric charge — a flavour that exists beyond the limits of ordinary energy.",
+  },
+  "Toxic Surge": {
+    title: "Toxic Surge",
+    description: "Radioactive rush. Toxic Surge delivers a citrus-acid jolt at the intersection of Monster aggression and Red Bull sharpness.",
+  },
 };
 
-// Size options for the product
 export interface SizeOption {
-    size: string;
-    unit: string;
-    selected?: boolean;
+  size: string;
+  unit: string;
+  selected?: boolean;
 }
 
 export const defaultSizes: SizeOption[] = [
-    { size: "355", unit: "ML", selected: true },
-    { size: "500", unit: "ML", selected: false },
-    { size: "1", unit: "L", selected: false },
+  { size: "355", unit: "ML", selected: true },
+  { size: "500", unit: "ML", selected: false },
+  { size: "1",   unit: "L",  selected: false },
 ];
 
-// Helper function to get theme by juice name
 export function getTheme(juiceName: string): ThemeConfig {
-    return canThemeMap[juiceName as JuiceName] || canThemeMap["Lemon Ginger"];
+  return canThemeMap[juiceName as JuiceName] || canThemeMap["Original Strike"];
 }
 
-// Helper function to get juice info
 export function getJuiceInfo(juiceName: string): JuiceInfo {
-    return juiceData[juiceName as JuiceName] || juiceData["Lemon Ginger"];
+  return juiceData[juiceName as JuiceName] || juiceData["Original Strike"];
 }

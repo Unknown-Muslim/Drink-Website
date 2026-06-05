@@ -1,51 +1,27 @@
 import type { Metadata } from "next";
-import { Inconsolata } from "next/font/google";
 import localFont from "next/font/local";
+import type { ReactNode } from "react";
 import "./globals.css";
-
-const inconsolata = Inconsolata({
-  variable: "--font-inconsolata",
-  subsets: ["latin"],
-});
 
 const thunder = localFont({
   src: [
-    {
-      path: './fonts/Thunder-BlackLC.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: './fonts/Thunder-BlackLC.woff',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: './fonts/Thunder-BlackLC.ttf',
-      weight: '400',
-      style: 'normal',
-    },
+    { path: "./fonts/Thunder-BlackLC.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/Thunder-BlackLC.woff",  weight: "400", style: "normal" },
+    { path: "./fonts/Thunder-BlackLC.ttf",   weight: "400", style: "normal" },
   ],
   variable: "--font-thunder",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Juicy - Premium Juice Selection",
-  description:
-    "Discover a world of vibrant flavors with our premium juice selection",
+  title: "Monster × Red Bull — COLLISION",
+  description: "Two legends. One unstoppable force. A concept.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning className="w-screen overflow-hidden">
-      <body
-        className={`${inconsolata.variable} ${thunder.variable} antialiased w-screen overflow-hidden `}
-      >
+      <body className={`${thunder.variable} antialiased w-screen overflow-hidden`}>
         {children}
       </body>
     </html>

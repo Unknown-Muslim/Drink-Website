@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useMobile } from "@/shared/hooks";
 import { SizeSelectorProps } from "../types";
 
